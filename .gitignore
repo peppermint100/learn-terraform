@@ -13,7 +13,9 @@ override.tf.json
 *_override.tf.json
 
 .DS_Store
+.idea
 .vscode/
 .sentinel
 .terraformrc
 terraform.rc
+
