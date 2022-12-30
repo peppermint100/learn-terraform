@@ -1,5 +1,12 @@
 ## Resources
 
+### Requirements
+- RDS
+- SG For RDS
+- IAM
+- WAS
+- VPC
+
 ### Security Groups
 - SG for Load Balancer
 - SG for Elastic Beanstalk EC2 Instances

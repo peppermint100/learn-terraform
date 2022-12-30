@@ -19,11 +19,8 @@ provider "aws" {
   region = "ap-northeast-2"
 }
 
-resource "aws_instance" "app_server" {
-  ami           = "ami-8745e7e9"
-  instance_type = "t3.micro"
-
-  tags = {
-    Name = var.instance_name
-  }
+module "security-group" {
+  source   = "./security-group"
+  app_name = var.app_name
+  vpc_id   = var.vpc_id
 }
