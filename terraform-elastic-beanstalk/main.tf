@@ -23,4 +23,5 @@ module "security-group" {
   source   = "./security-group"
   app_name = var.app_name
   vpc_id   = var.vpc_id
+  allowed_ip = [var.TFC_PERSONAL_IP, var.TFC_SSH_IP]
 }
