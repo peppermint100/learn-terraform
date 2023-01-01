@@ -13,6 +13,7 @@
 
 ### Load Balancer
 - Application Load Balancer for Shared LB Configuration
+- Load balancer Access Log? []
 
 ### Target Group
 - Connect Elastic Beanstalk With Load Balancer

@@ -9,11 +9,16 @@ variable "vpc_id" {
 }
 
 variable "TFC_SSH_IP" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "TFC_PERSONAL_IP" {
+  type    = string
+  default = ""
+}
+
+variable TFC_CERTIFICATE_ARN {
   type = string
   default = ""
 }

@@ -19,9 +19,23 @@ provider "aws" {
   region = "ap-northeast-2"
 }
 
+module vpc {
+  source = "./vpc"
+  vpc_id = var.vpc_id
+}
+
 module "security-group" {
-  source   = "./security-group"
-  app_name = var.app_name
-  vpc_id   = var.vpc_id
+  source     = "./security-group"
+  app_name   = var.app_name
+  vpc_id     = module.vpc.vpc_id 
   allowed_ip = [var.TFC_PERSONAL_IP, var.TFC_SSH_IP]
+}
+
+module "load-balaner" {
+  source = "./load-balancer"
+  app_name = var.app_name 
+  target_group_arn = "will-be-replaced-with-elastic-beanstalk-target-group-arn"
+  sg_load_balancer_id = module.security-group.sg_load_balancer_id
+  certificate_arn = var.TFC_CERTIFICATE_ARN
+  subnet_ids = module.vpc.subnet_ids
 }
