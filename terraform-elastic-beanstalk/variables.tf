@@ -3,22 +3,25 @@ variable "app_name" {
   default = "ExampleApp"
 }
 
-variable "vpc_id" {
+variable "TFE_VPC_ID" {
   type    = string
-  default = "vpc-0e181d8b25792b0b1"
+  sensitive = true
 }
 
-variable "TFC_SSH_IP" {
-  type    = string
-  default = ""
-}
-
-variable "TFC_PERSONAL_IP" {
+variable "TFE_SSH_IP" {
   type    = string
   default = ""
+  sensitive = true
 }
 
-variable TFC_CERTIFICATE_ARN {
+variable "TFE_PERSONAL_IP" {
+  type    = string
+  default = ""
+  sensitive = true
+}
+
+variable TFE_CERTIFICATE_ARN {
   type = string
   default = ""
+  sensitive = true
 }
