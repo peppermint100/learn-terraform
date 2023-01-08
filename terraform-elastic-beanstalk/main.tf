@@ -32,8 +32,8 @@ module "security-group" {
 
 module "load-balaner" {
   source = "./load-balancer"
-  app_name = var.app_name
-  target_group_arn = "will-be-replaced"
+  app_name = var.app_name 
+  target_group_arn = ""
   sg_load_balancer_id = module.security-group.sg_load_balancer_id
   certificate_arn = var.TFE_CERTIFICATE_ARN
   subnet_ids = module.vpc.subnet_ids
