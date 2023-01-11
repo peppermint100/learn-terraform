@@ -25,3 +25,9 @@ variable TFE_CERTIFICATE_ARN {
   default = ""
   sensitive = true
 }
+
+variable TFE_BEANSTALK_SERVICE_ARN {
+  type = string
+  default = ""
+  sensitive = true
+}
