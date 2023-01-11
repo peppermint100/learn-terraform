@@ -4,30 +4,30 @@ variable "app_name" {
 }
 
 variable "TFE_VPC_ID" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 variable "TFE_SSH_IP" {
-  type    = string
-  default = ""
+  type      = string
+  default   = ""
   sensitive = true
 }
 
 variable "TFE_PERSONAL_IP" {
-  type    = string
-  default = ""
+  type      = string
+  default   = ""
   sensitive = true
 }
 
-variable TFE_CERTIFICATE_ARN {
-  type = string
-  default = ""
+variable "TFE_CERTIFICATE_ARN" {
+  type      = string
+  default   = ""
   sensitive = true
 }
 
-variable TFE_BEANSTALK_SERVICE_ARN {
-  type = string
-  default = ""
+variable "TFE_BEANSTALK_SERVICE_ARN" {
+  type      = string
+  default   = ""
   sensitive = true
 }

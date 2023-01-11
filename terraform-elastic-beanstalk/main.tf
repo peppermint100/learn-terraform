@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "tnear-terraform-backend"
-    key = "state"
+    key    = "state"
     region = "ap-northeast-2"
   }
 
@@ -18,7 +18,7 @@ provider "aws" {
   region = "ap-northeast-2"
 }
 
-module vpc {
+module "vpc" {
   source = "./vpc"
   vpc_id = var.TFE_VPC_ID
 }
@@ -26,15 +26,15 @@ module vpc {
 module "security-group" {
   source     = "./security-group"
   app_name   = var.app_name
-  vpc_id     = module.vpc.vpc_id 
+  vpc_id     = module.vpc.vpc_id
   allowed_ip = [var.TFE_PERSONAL_IP, var.TFE_SSH_IP]
 }
 
 module "load-balaner" {
-  source = "./load-balancer"
-  app_name = var.app_name
-  target_group_arn = "will-be-replaced"
+  source              = "./load-balancer"
+  app_name            = var.app_name
+  target_group_arn    = ""
   sg_load_balancer_id = module.security-group.sg_load_balancer_id
-  certificate_arn = var.TFE_CERTIFICATE_ARN
-  subnet_ids = module.vpc.subnet_ids
+  certificate_arn     = var.TFE_CERTIFICATE_ARN
+  subnet_ids          = module.vpc.subnet_ids
 }
