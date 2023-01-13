@@ -18,7 +18,7 @@ resource "aws_elastic_beanstalk_environment" "this" {
   setting {
     name = "SecurityGroups"
     namespace = "aws:autoscaling:launchconfiguration"
-    value = var.security_groups
+    value = join(",", var.security_groups)
   }
 
   # Capacity
@@ -138,7 +138,7 @@ resource "aws_elastic_beanstalk_environment" "this" {
   setting {
     namespace = "aws:ec2:vpc"
     name      = "Subnets"
-    value     = var.subnet_ids
+    value     = join(",", var.subnet_ids)
   }
 }
 

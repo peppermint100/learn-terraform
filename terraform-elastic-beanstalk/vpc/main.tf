@@ -1,5 +1,8 @@
 data "aws_vpc" "selected" {
     id = var.vpc_id
+    tags = {
+      Name = "intra-service-vpc"
+    }
 }
 
 data "aws_subnets" "this" {
@@ -12,4 +15,3 @@ data "aws_subnets" "this" {
       tier = "public"
     }
 }
-

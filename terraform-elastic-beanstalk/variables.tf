@@ -5,6 +5,7 @@ variable "app_name" {
 
 variable "TFE_VPC_ID" {
   type      = string
+  default   = ""
   sensitive = true
 }
 
@@ -27,6 +28,18 @@ variable "TFE_CERTIFICATE_ARN" {
 }
 
 variable "TFE_BEANSTALK_SERVICE_ARN" {
+  type      = string
+  default   = ""
+  sensitive = true
+}
+
+variable "TFE_AMI_ID" {
+  type      = string
+  default   = ""
+  sensitive = true
+}
+
+variable "TFE_KEY_NAME" {
   type      = string
   default   = ""
   sensitive = true
