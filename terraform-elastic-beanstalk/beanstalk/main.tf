@@ -53,6 +53,12 @@ resource "aws_elastic_beanstalk_environment" "this" {
   }
 
   setting {
+    namespace = "aws:elbv2:loadbalancer"
+    name = "SharedLoadBalancer"
+    value     = var.load_balancer_arn
+  }
+
+  setting {
     name      = "InstanceTypes"
     namespace = "aws:ec2:instances"
     value     = "t3.micro"

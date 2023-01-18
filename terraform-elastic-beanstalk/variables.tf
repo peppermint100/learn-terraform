@@ -27,7 +27,7 @@ variable "TFE_CERTIFICATE_ARN" {
   sensitive = true
 }
 
-variable "TFE_BEANSTALK_SERVICE_ARN" {
+variable "TFE_BEANSTALK_SERVICE_ROLE_ARN" {
   type      = string
   default   = ""
   sensitive = true

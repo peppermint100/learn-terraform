@@ -1,4 +1,3 @@
-// vpc, lister routing to target group 
 resource "aws_lb" "shared_load_balancer" {
   name               = "alb-${var.app_name}"
   internal           = false
@@ -33,6 +32,6 @@ resource "aws_lb_listener" "https" {
 
   default_action {
     type             = "forward"
-    target_group_arn = var.target_group_arn 
+    target_group_arn = var.target_group_arn
   }
 }

@@ -37,3 +37,8 @@ variable "key_name" {
 variable "notification_endpoint_email" {
   type = string
 }
+
+variable "load_balancer_arn" {
+  type = string
+}
+

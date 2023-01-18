@@ -1,9 +1,4 @@
-
 variable "app_name" {
-    type = string
-}
-
-variable "target_group_arn" {
     type = string
 }
 
@@ -17,4 +12,8 @@ variable "certificate_arn" {
 
 variable "subnet_ids" {
     type = list(string)
+}
+
+variable "target_group_arn" {
+    type = string
 }

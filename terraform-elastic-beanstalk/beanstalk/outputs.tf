@@ -1,4 +1,3 @@
-
-output "autoscaling_groups" {
-  value = aws_elastic_beanstalk_environment.this.autoscaling_groups
+output "beanstalk_application_arn" {
+  value = aws_elastic_beanstalk_application.this.arn
 }
