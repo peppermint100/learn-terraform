@@ -20,3 +20,6 @@ override.tf.json
 terraform.rc
 
 *secrets.tfvars
+
+mykey
+mykey.pub
